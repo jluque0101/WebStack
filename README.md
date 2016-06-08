@@ -1,5 +1,7 @@
 # RSMapWeb
 
+## Los proyectos fueron borrados de las plataformas Travis-CI, CodeShip, Docker, Heroku y Azure por tanto los enlaces se encuentran inaccesibles.
+
 [![Build Status](https://travis-ci.org/luqueburgosjm/RSMapWeb.svg?branch=master)](https://travis-ci.org/luqueburgosjm/RSMapWeb)
 [ ![Codeship Status for luqueburgosjm/RSMapWeb](https://codeship.com/projects/43ccd7d0-9dfc-0133-9c1d-6aac2b19c75b/status?branch=master)](https://codeship.com/projects/127675)
 [![Build Status](https://snap-ci.com/luqueburgosjm/RSMapWeb/branch/master/build_image)](https://snap-ci.com/luqueburgosjm/RSMapWeb/branch/master)
