@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  sudo: yes
+  remote_user: jose
+  tasks:
+  - name: Update sys
+    apt: update_cache=yes upgrade=dist
+  - name: Basic dependencies
+    action: apt pkg={{ item }} state=installed
+    with_items:
+      - python-setuptools
+      - python-dev
+      - python-pip
+      - build-essential
+      - git
+      - make
+  - name: Git clone
+    git: repo=https://github.com/luqueburgosjm/RSMapWeb.git dest=~/RSMapWeb clone=yes force=yes
+  - name: Permissions
+    command: chmod -R +x ~/RSMapWeb
+  - name: App requirements
+    pip: requirements=~/RSMapWeb/requirements.txt
+  - name : Stop production server if running
+    script: ~/RSMapWeb/scripts/stopifrunning.sh
+    ignore_errors: yes
+  - name: Run app
+    command: chdir=~/RSMapWeb nohup python manage.py runserver 0.0.0.0:8000
